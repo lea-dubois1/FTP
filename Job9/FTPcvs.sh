@@ -8,6 +8,7 @@ while IFS="," read Id Prenom Nom Mdp Role;
 do 
       if [ "$Id" -eq "$Id" ] 2>/dev/null;
             then
+            Mdp=${Mdp:0:6}
             sudo useradd -u $Id -p $Mdp $Prenom  
             sudo usermod -aG ftpgroup $Prenom    
 
