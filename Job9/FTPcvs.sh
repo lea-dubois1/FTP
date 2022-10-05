@@ -1,12 +1,14 @@
 #!/bin/bash
 
 my_input=/home/lea2/FTP/Shell_Userlist.csv
+groupadd ftpgroup
 
 while IFS="," read Id Prenom Nom Mdp Role;
 do 
       if [ "$Id" -eq "$Id" ] 2>/dev/null;
             then
-            sudo useradd -u $Id -p $Mdp $Prenom      
+            sudo useradd -u $Id -p $Mdp $Prenom  
+            sudo usermod -aG ftpgroup $Prenom    
 
             if [ ${Role:0:5} = "Admin" ];
                   then
