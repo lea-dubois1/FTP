@@ -1,6 +1,6 @@
 #!/bin/bash
 
-my_input=/home/lea2/FTP/Shell_Userlist.csv
+my_input=Shell_Userlist.csv
 
 while IFS="," read Id Prenom Nom Mdp Role;
 do 
