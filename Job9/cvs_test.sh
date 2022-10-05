@@ -16,14 +16,14 @@ do
         addgroup $Prenom FTP
         mkdir /home/$Prenom/FTP
 
-        echo /home/FTP /home/$Prenom/FTP auto bind,defaults 0 0 > cat >> /etc/fstab
-        mount -a
-
         if [ ${Role:0:5} = "Admin" ];
             then
             sudo usermod -aG sudo $Prenom
                   
         fi
+        
+        echo /home/FTP /home/$Prenom/FTP auto bind,defaults 0 0 > cat >> /etc/fstab
+        mount -a
 
     fi
 
