@@ -2,13 +2,13 @@
 
 my_input=/home/lea2/FTP/Shell_Userlist.csv
 
-groupadd FTP
-mkdir /home/FTP
-chgrp FTP FTP
-chmod 770 FTP
-
 while IFS="," read Id Prenom Nom Mdp Role;
 do 
+    groupadd FTP
+    mkdir /home/FTP
+    chgrp FTP FTP
+    chmod 770 FTP
+
     if [ "$Id" -eq "$Id" ] 2>/dev/null;
         then
         sudo useradd -u $Id -p $Mdp $Prenom 
