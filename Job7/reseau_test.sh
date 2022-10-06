@@ -19,5 +19,5 @@ cp tls.conf /etc/proftpd/tls.conf
 systemctl restart proftpd
 
 # creer les utilisateurs Merry et Pippin
-useradd -m -p kalimac merry
-useradd -m -p secondbreakfast pippin
+#useradd -m -p kalimac merry
+#useradd -m -p secondbreakfast pippin

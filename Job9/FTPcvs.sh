@@ -1,7 +1,8 @@
 #!/bin/bash
 
-my_input=/home/lea2/FTP/Shell_Userlist.csv
+my_input=Shell_Userlist.csv
 groupadd ftpgroup
+sudo cp proftpd.conf /etc/proftpd/proftpd.conf
 
 while IFS="," read Id Prenom Nom Mdp Role;
 do 
