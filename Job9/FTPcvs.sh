@@ -1,6 +1,6 @@
 #!/bin/bash
 
-my_input=Shell_Userlist.csv
+my_input=Shell_Userlist.txt
 sudo groupadd ftpgroup
 sudo cp proftpd.conf /etc/proftpd/proftpd.conf
 
