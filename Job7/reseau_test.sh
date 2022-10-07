@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # installer proftpd avec tout ses modules, openssl et filezilla
-apt-get install proftpd-*
-apt-get install openssl
-apt-get install filezilla
+sudo apt install proftpd-*
+sudo apt install openssl
+sudo apt install filezilla
 
 # Creer le dossier SSL et y generer la clef et le certificat
-mkdir /etc/proftpd/ssl
-openssl req -x509 -newkey rsa:2048 -keyout /etc/proftpd/ssl/proftpd.key.pem -out /etc/proftpd/ssl/proftpd.cert.pem -nodes -days 365
+sudo mkdir /etc/proftpd/ssl
+sudo openssl req -x509 -newkey rsa:2048 -keyout /etc/proftpd/ssl/proftpd.key.pem -out /etc/proftpd/ssl/proftpd.cert.pem -nodes -days 365
 
 
 # modifier les fichier de conf : proftpd.conf ; tls.conf et modules.conf
-cp modules.conf /etc/proftpd/modules.conf
-cp proftpd.conf /etc/proftpd/proftpd.conf
-cp tls.conf /etc/proftpd/tls.conf
+sudo cp modules.conf /etc/proftpd/modules.conf
+sudo cp proftpd.conf /etc/proftpd/proftpd.conf
+sudo cp tls.conf /etc/proftpd/tls.conf
 
 # On redémarre proftpd
-systemctl restart proftpd
+sudo systemctl restart proftpd
 
 # creer les utilisateurs Merry et Pippin
-#useradd -m -p kalimac merry
-#useradd -m -p secondbreakfast pippin
+sudo useradd -m -p kalimac merry
+sudo useradd -m -p secondbreakfast pippin

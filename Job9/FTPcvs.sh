@@ -8,12 +8,12 @@ while IFS="," read Id Prenom Nom Mdp Role;
 do 
       if [ "$Id" -eq "$Id" ] 2>/dev/null;
             then
-            sudo useradd -u $Id -p $Mdp $Prenom  
+            sudo useradd -u $Id -p $Mdp ${Prenom, ,}  
             sudo usermod -aG ftpgroup ${Prenom, ,}    
 
             if [ ${Role:0:5} = "Admin" ];
                   then
-                  sudo usermod -aG sudo $Prenom
+                  sudo usermod -aG sudo ${Prenom, ,}
                   
             fi
 
